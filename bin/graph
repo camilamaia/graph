@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import os, sys
+
+file_path = os.path.realpath(__file__)
+sys.path.append('/'.join(file_path.split('/')[0:-2]))
+
+from graph.graph import Graph
+
+def main():
+	graph = Graph()
+	print graph.success_method()
+
+if __name__ == '__main__':
+    main()
