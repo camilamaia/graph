@@ -10,7 +10,7 @@ from graph.graph import Graph
 
 def main():
 	graph = Graph()
-	print graph.success_method()
+	graph.success_method()
 
 if __name__ == '__main__':
     main()
