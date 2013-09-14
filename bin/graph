@@ -7,10 +7,16 @@ file_path = os.path.realpath(__file__)
 sys.path.append('/'.join(file_path.split('/')[0:-2]))
 
 from graph.graph import Graph
+from graph.graph_creator import GraphCreator
+from graph.dijkstras_algorithm import DijkstrasAlgorithm
 
 def main():
-	graph = Graph()
-	graph.success_method()
+	graph_creator = GraphCreator()
+	# graph = graph_creator.get_personalized_graph()
+	graph = graph_creator.get_test_graph()
+	dijkstras_algorithm = DijkstrasAlgorithm(graph)
+	dijkstras_algorithm.run()
+
 
 if __name__ == '__main__':
     main()

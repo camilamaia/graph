@@ -25,7 +25,6 @@ class Graph():
         # print self.get_adj_nodes(10)
         # print self.size(10)
 
-
     def add_node(self, node_value):
         if node_value not in self.nodes:
         	node = Node(node_value)
@@ -88,7 +87,7 @@ class Graph():
         for node_value in self.nodes:
     		print '    ', node_value, self.nodes[node_value].adjacent_nodes
         print "  }"
-        print "  order: ", str(self.order()), "\n" 
+        print "  order:", str(self.order()), "\n" 
 
     def test_node(self):
         node = Node(10)

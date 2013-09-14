@@ -10,3 +10,5 @@ Software produzido na disciplina Grafos, INE5413, do departamento de Informátic
 Para executar o arquivo, entre no diretório do projeto e execute o comando ./bin/graph
 
 ~/workspace/graph$ ./bin/graph
+
+obs: falar sobre as duas maneiras de gerar grafo
