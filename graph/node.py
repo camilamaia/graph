@@ -17,3 +17,6 @@ class Node():
 
 	def qnt_adj_nodes(self):
 		return len(self.adjacent_nodes)
+
+	def get_weight(self, node_value):
+		return self.adjacent_nodes[node_value]

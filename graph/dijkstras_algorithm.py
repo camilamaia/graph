@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
+import sys
+
 class DijkstrasAlgorithm():
 
 	def __init__(self, graph):
 		self.graph = graph
-		# self.origin_node = graph.get_random_node()
-		# self.end_node = graph.get_random_node()
-		self.origin_node = "A"
-		self.end_node = "D"
+		self.origin_node = graph.get_random_node()
+		self.end_node = graph.get_random_node()
 		self.minimum_custom = 0
 	
 	def run(self):
@@ -15,24 +15,31 @@ class DijkstrasAlgorithm():
 		
 		if self.origin_node != self.end_node:
 			nodes = self.graph.get_nodes()
-			nodes_unvisted = set()
+			unvisted_nodes = set()
 			minimum_customs = {}
 
 			for i in xrange(0,self.graph.order()):
 				node = nodes.pop()
-				nodes_unvisted.update(node)
-				minimum_customs.update({node:-1})
+				unvisted_nodes.update(node)
+				minimum_customs.update({node:sys.maxint})
 
 			minimum_customs[self.origin_node] = 0
 			current_node = self.origin_node
 
-			
+			while self.end_node in unvisted_nodes:
+				neighbors = self.graph.get_adj_nodes(current_node)
+				unvisted_neighbors = neighbors.intersection(unvisted_nodes)
+				
+				for neighbor in unvisted_neighbors:
+					distance = minimum_customs[current_node] + self.graph.get_weight(current_node, neighbor)
+					if distance < minimum_customs[neighbor]:
+						minimum_customs.update({neighbor:distance})
 
-
-			print minimum_customs
-			print nodes_unvisted
-
-
+				unvisted_nodes.remove(current_node)
+				if len(unvisted_nodes) != 0:
+					current_node = min(unvisted_nodes, key=lambda j:minimum_customs[j])
+				
+			self.minimum_custom = minimum_customs[self.end_node]
 
 		self.print_result()
 

@@ -1,0 +1,9 @@
+Lembrar de:
+
+- Refatorar o código
+- Testar mais
+- Verificar quando a menor distância é infinito
+- Construir o menor caminho
+- Não permitir que o usuário coloque não coloque int quando se pede
+- Possibilitar a escolha do usuário na criação do grafo: grafo pronto ou personalidado
+- Colocar tratamento de exceções

@@ -7,23 +7,6 @@ class Graph():
 	
     def __init__(self):
     	self.nodes = {}
-    	pass
-
-    def success_method(self):
-    	self.test_node()    
-    	self.print_graph()
-        self.add_node(5)
-        self.print_graph()
-        # self.remove_node(10)
-        # self.print_graph()
-        self.connect_nodes(5,10,50)
-        self.print_graph()
-        self.disconnect_nodes(5,10)
-        self.print_graph()
-        # self.get_nodes()
-        # print self.get_random_node()
-        # print self.get_adj_nodes(10)
-        # print self.size(10)
 
     def add_node(self, node_value):
         if node_value not in self.nodes:
@@ -82,20 +65,16 @@ class Graph():
             return node.qnt_adj_nodes()
         print "Error getting size: There is no node " + str(node_value) + " on Graph"            
 
+    def get_weight(self, node_value1, node_value2):
+        if node_value1 in self.nodes and node_value2 in self.nodes:
+            node1 = self.nodes[node_value1]
+            return node1.get_weight(node_value2)
+        else:
+            print "Error getting weight: The two nodes must be on graph"
+
     def print_graph(self):
         print "Graph: \n  {"
         for node_value in self.nodes:
     		print '    ', node_value, self.nodes[node_value].adjacent_nodes
         print "  }"
-        print "  order:", str(self.order()), "\n" 
-
-    def test_node(self):
-        node = Node(10)
-        self.nodes.update({node.value:node})
-        # self.print_graph()
-        node.add_adj_node(2,3)
-        # self.print_graph()
-        node.add_dict_adj_nodes({6:9,7:1})
-        # self.print_graph()
-        node.remove_adj_node(6)
-        # self.print_graph()
+        print "  order:", str(self.order()), "\n"     
