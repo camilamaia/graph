@@ -13,7 +13,7 @@ class Graph():
         	node = Node(node_value)
         	self.nodes.update({node.value:node})
         else:
-            print "Error adding: The node " + str(node_value) + " is already on graph."
+            raise Exception("Error adding: The node " + str(node_value) + " is already on graph")
 
     def remove_node(self, node_value):
     	if node_value in self.nodes:
@@ -22,7 +22,7 @@ class Graph():
                 if node_value in node.adjacent_nodes:
                     node.remove_adj_node(node_value)
         else:
-            print "Error removing: There is no node " + str(node_value) + " on Graph"
+            raise Exception("Error removing: There is no node " + str(node_value) + " on Graph")
 
     def connect_nodes(self, node_value1, node_value2, weight) :
         if node_value1 in self.nodes and node_value2 in self.nodes:
@@ -32,7 +32,7 @@ class Graph():
             node1.add_adj_node(node_value2,weight)
             node2.add_adj_node(node_value1,weight)
         else:
-            print "Error connecting: The two nodes must be on graph"
+            raise Exception("Error connecting: The two nodes must be on graph")
 
     def disconnect_nodes(self, node_value1, node_value2) :
         if node_value1 in self.nodes and node_value2 in self.nodes:
@@ -42,7 +42,7 @@ class Graph():
             node1.remove_adj_node(node_value2)
             node2.remove_adj_node(node_value1)
         else:
-            print "Error disconnecting: The two nodes must be on graph"
+            raise Exception("Error disconnecting: The two nodes must be on graph")
 
     def order(self):
         return len(self.nodes)
@@ -57,20 +57,20 @@ class Graph():
         if node_value in self.nodes:
             node = self.nodes[node_value]
             return set(node.adjacent_nodes.keys())
-        print "Error getting adjacent nodes: There is no node " + str(node_value) + " on Graph"
+        raise Exception("Error getting adjacent nodes: There is no node " + str(node_value) + " on Graph")
 
     def size(self, node_value):
         if node_value in self.nodes:
             node = self.nodes[node_value]
             return node.qnt_adj_nodes()
-        print "Error getting size: There is no node " + str(node_value) + " on Graph"            
+        raise Exception("Error getting size: There is no node " + str(node_value) + " on Graph")
 
     def get_weight(self, node_value1, node_value2):
         if node_value1 in self.nodes and node_value2 in self.nodes:
             node1 = self.nodes[node_value1]
             return node1.get_weight(node_value2)
         else:
-            print "Error getting weight: The two nodes must be on graph"
+            raise Exception("Error getting weight: The two nodes must be on graph")
 
     def print_graph(self):
         print "Graph: \n  {"
