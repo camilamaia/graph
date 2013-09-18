@@ -35,6 +35,7 @@ class GraphCreator():
 		return self.graph
 
 	def get_personalized_graph(self):
+		print "Let's create a new graph!"
 		self.create_nodes()
 		self.create_connections()
 		print "Ok, your graph is ready now! Take a look:"
@@ -43,7 +44,6 @@ class GraphCreator():
 		return self.graph
 
 	def create_nodes(self):
-		print "Let's create a new graph!"
 		number_of_nodes = self.get_number_of_nodes()
 
 		for i in xrange(1,number_of_nodes+1):
