@@ -37,13 +37,13 @@ class GraphCreator():
 	def get_personalized_graph(self):
 		self.create_nodes()
 		self.create_connections()
-		print "Ok, your self.graph is ready now! Take a look:"
+		print "Ok, your graph is ready now! Take a look:"
 		self.graph.print_graph()
 
 		return self.graph
 
 	def create_nodes(self):
-		print "Let's create a new self.graph!"
+		print "Let's create a new graph!"
 		number_of_nodes = self.get_number_of_nodes()
 
 		for i in xrange(1,number_of_nodes+1):
