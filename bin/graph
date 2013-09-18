@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os, sys
+from argparse import ArgumentParser
 
 file_path = os.path.realpath(__file__)
 sys.path.append('/'.join(file_path.split('/')[0:-2]))
@@ -11,12 +12,25 @@ from graph.graph_creator import GraphCreator
 from graph.dijkstras_algorithm import DijkstrasAlgorithm
 
 def main():
+	args = parse_arguments()
 	graph_creator = GraphCreator()
-	# graph = graph_creator.get_personalized_graph()
-	graph = graph_creator.get_test_graph()
+	
+	if args.c:
+		graph = graph_creator.get_personalized_graph()
+	else:
+		graph = graph_creator.get_test_graph()
+	
 	dijkstras_algorithm = DijkstrasAlgorithm(graph)
 	dijkstras_algorithm.run()
 
+def parse_arguments():
+    description = '''
+    	This script calculates the minimum distance between two nodes for given a graph. 
+        ''' 
+    parser = ArgumentParser(description=description)
+    parser.add_argument('-c', action='store_true', help="Create your own graph", default=False)
+        
+    return parser.parse_args()
 
 if __name__ == '__main__':
     main()
