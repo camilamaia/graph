@@ -1,25 +1,23 @@
-graph
+Graph - Dijkstra's Algorithm Implementation
 =====
 
-Autora: Camila Maia - matrícula: 11201012
-
-Software produzido na disciplina Grafos, INE5413, do departamento de Informática e Estatística da Universidade Federal de Santa Catariana no semestre 2013/2.
+Software developed for the Graph Class INE5413, of the Department of Informatics and Statistics of the Federal University of Santa Catariana in the semester 2013/2.
 
 -----
 
-Este script calcula a menor distância entre dois nodos dado um grafo, utilizando o algoritmo de Dijkstra.
+A implementation of Dijkstra's algorithm for finding the shortest paths between nodes in a given graph.
 
-Para executar o arquivo, entre no diretório do projeto e execute o comando ./bin/graph
+## Run
 
-    ~/workspace/graph$ ./bin/graph
+Inside the project directory run: 
 
-Existem dois parâmetros opcionais:
+```bash
+    $ ./bin/graph
+```
 
-    -h, --help  mostra um texto de ajuda
-    -c          permite criar seu próprio grafo.
+By default, the script uses the graph below to calculate the shortest paths between nodes:
 
-Por padrão o script calcula a menor distância entre dois pontos aleatórios para este determinado grafo (que foi estudado em sala de aula):
-
+```python
     {
        A {'B': 7, 'G': 3, 'F': 5}
        C {'B': 2, 'E': 3, 'D': 5, 'G': 2}
@@ -29,3 +27,10 @@ Por padrão o script calcula a menor distância entre dois pontos aleatórios pa
        G {'A': 3, 'C': 2, 'B': 3, 'E': 4, 'F': 3}
        F {'A': 5, 'E': 6, 'G': 3}
     }
+```
+
+If you want to provide your own graph, run the script with the `Create your own graph` option:
+
+```bash
+    $ ./bin/graph -c
+```
