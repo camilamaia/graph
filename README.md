@@ -3,7 +3,7 @@ Graph - Dijkstra's Algorithm Implementation
 
 A implementation of Dijkstra's algorithm for finding the shortest paths between nodes in a given graph.
 
-Software developed for the Graph Class INE5413, of the Department of Informatics and Statistics of the Federal University of Santa Catariana in the semester 2013/2.
+Software developed for the Graph Class INE5413, of the Department of Informatics and Statistics of the Federal University of Santa Catariana in the second semester of 2013.
 
 -----
 
