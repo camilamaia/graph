@@ -3,3 +3,4 @@
 - unit tests
 - handle case when shortest path is infinite
 - build and show shortest path
+- transform this script into a lib
