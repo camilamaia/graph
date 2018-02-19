@@ -5,8 +5,6 @@ A implementation of Dijkstra's algorithm for finding the shortest paths between 
 
 Software developed for the Graph Class INE5413, of the Department of Informatics and Statistics of the Federal University of Santa Catariana in the second semester of 2013.
 
------
-
 ## How to Run
 
 Inside the project directory, run: 
